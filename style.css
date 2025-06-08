@@ -1,4 +1,3 @@
-
 /* Import font */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
@@ -21,7 +20,6 @@
   border-radius: 12px;
   color: #000;
   overflow-y: auto;
-  max-height: calc(100vh - 150px);
 }
 
 body {
@@ -30,7 +28,6 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   padding: 0;
-  overflow-x: hidden;
 }
 
 /* Status Bar (only shown after login) */
@@ -42,7 +39,6 @@ body {
   background-color: #55185d;
   color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -66,6 +62,10 @@ body {
   font-weight: bold;
   color: white;
   margin: 0;
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .status-controls {
@@ -146,34 +146,26 @@ body {
 }
 
 .logo {
-  width: 150px;
+  width: 200px;
   height: auto;
   margin-bottom: 20px;
 }
 
-.website-title {
-  font-size: 2em;
-  font-weight: 700;
-  margin-bottom: 10px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
 .description {
-  font-size: 0.9em;
+  font-size: 1em;
   line-height: 1.6;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 #split-screen-container {
   width: 100%;
-  min-height: 100vh;
+  height: 100px;
   display: block;
 }
 
 .split-container {
   display: flex;
   min-height: 100vh;
-  flex-direction: column;
 }
 
 .form-side {
@@ -183,7 +175,6 @@ body {
   flex-direction: column;
   justify-content: center;
   background: rgba(255, 255, 255, 0.05);
-  order: 1;
 }
 
 /* Full screen container for other pages */
@@ -193,7 +184,6 @@ body {
   padding: 20px;
   background-color: #b740fa;
   display: none;
-  padding-top: 120px;
 }
 
 .container {
@@ -211,23 +201,22 @@ body {
 
 .header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .header h1 {
-  color: #ffffff;
+  color: #000000;
   margin-bottom: 10px;
-  text-align: center;
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 .header h2 {
-  color: #ffffff;
+  color: #000000;
   font-size: 1rem;
 }
 
 .header h3 {
-  color: #ffd524;
+  color: #000000;
   font-size: 1.5rem;
 }
 
@@ -244,7 +233,7 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   margin-bottom: 20px;
   padding-bottom: 15px;
   flex-wrap: wrap;
@@ -271,11 +260,11 @@ body {
 }
 
 #notif-icon {
-  background-color: #b740fa;
-  color: #b740fa;
+  background-color: #ffd524;
+  color: #ffd524;
   border: none;
-  padding: 10px 10px;
-  font-size: 1.1rem;
+  padding: 7px 10px;
+  font-size: 1rem;
   border-radius: 10px;
   cursor: pointer;
   position: relative;
@@ -365,7 +354,7 @@ body {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
-  color: #000000;
+  color: #000;
 }
 
 input,
@@ -415,12 +404,12 @@ textarea {
 .stat-card {
   background-color: #ffd524;
   border-radius: 12px;
-  padding: 20px;
+  padding: 25px;
   color: #000000;
   text-align: center;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .role-card:hover,
@@ -433,13 +422,12 @@ textarea {
 .service-card h3 {
   background-color: #ffd524;
   margin-bottom: 10px;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 .role-card p,
 .service-card p {
   color: #000000;
-  font-size: 0.9rem;
 }
 
 .stat-card h3 {
@@ -448,7 +436,7 @@ textarea {
 }
 
 .stat-value {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #000000;
 }
@@ -458,8 +446,8 @@ textarea {
 .service-options,
 .stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 /* Tables */
@@ -476,7 +464,7 @@ textarea {
   width: 100%;
   border-collapse: collapse;
   margin: 0;
-  font-size: 0.85em;
+  font-size: 0.9em;
   min-width: 600px;
 }
 
@@ -484,19 +472,17 @@ textarea {
 .submission-table th {
   background-color: #b740fa;
   color: #ffffff;
-  padding: 10px 12px;
+  padding: 12px 15px;
   text-align: left;
   border-bottom: 2px solid #ffd524;
-  font-size: 0.9em;
 }
 
 .tracking-table td,
 .submission-table td {
   background-color: #55185d;
   color: white;
-  padding: 10px 12px;
+  padding: 12px 15px;
   border-bottom: 3px solid #ffffff;
-  font-size: 0.85em;
 }
 
 .tracking-table tr:last-child td,
@@ -508,15 +494,14 @@ textarea {
 .submission-table tr:hover td {
   background-color: #1f2833;
 }
-
 /* Action buttons */
 .action-btn {
-  padding: 5px 8px;
+  padding: 6px 12px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.8rem;
-  margin-right: 3px;
+  margin-right: 5px;
   transition: opacity 0.3s;
 }
 
@@ -540,15 +525,15 @@ textarea {
 
 /* Tab Navigation */
 .tab-btn {
-  padding: 8px 15px;
+  padding: 10px 20px;
   background: transparent;
   border: none;
-  color: #000000;
+  color: #ffffff;
   cursor: pointer;
   border-bottom: 3px solid transparent;
   transition: all 0.3s ease;
-  font-size: 14px;
-  margin-right: 5px;
+  font-size: 16px;
+  margin-right: 10px;
 }
 
 .tab-btn.active {
@@ -573,7 +558,7 @@ textarea {
 /* Admin Status Board */
 .admin-status-board {
   margin-top: 30px;
-  padding: 15px;
+  padding: 20px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   border: 1px solid #ffd524;
@@ -581,17 +566,16 @@ textarea {
 
 .admin-status-board h2 {
   color: #ffffff;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   text-align: center;
-  font-size: 1.3rem;
 }
 
 /* Form Rows */
 .form-row {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 15px;
-  margin-bottom: 15px;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 /* Animations */
@@ -605,17 +589,9 @@ textarea {
 }
 
 /* Hover Button Effects */
-.service-options {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
 .service-options .box {
   position: relative;
-  width: 100%;
-  max-width: 300px;
+  width: 300px;
   height: 300px;
   overflow: hidden;
   transition: all 0.5s ease;
@@ -689,22 +665,22 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 15px;
+  padding: 20px;
   box-sizing: border-box;
   color: white;
   text-align: left;
 }
 
 .service-options .box .content .title {
-  font-size: 20px;
-  margin-bottom: 8px;
+  font-size: 24px;
+  margin-bottom: 10px;
   transform: translateY(20px);
   opacity: 0;
   transition: all 0.5s ease;
 }
 
 .service-options .box .content p {
-  font-size: 13px;
+  font-size: 14px;
   transform: translateY(20px);
   opacity: 0;
   transition: all 0.5s ease 0.1s;
@@ -720,11 +696,11 @@ textarea {
 .update-btn, .view-btn, .delete-btn {
   background: linear-gradient(90deg, #e101ff, #b740fa);
   color: white;
-  padding: 6px 12px;
+  padding: 8px 16px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 14px;
   transition: all 0.3s ease;
 }
 
@@ -735,13 +711,12 @@ textarea {
 
 /* Status select dropdown */
 .status-select {
-  padding: 6px;
+  padding: 8px;
   border-radius: 4px;
-  background-color: #ffffff;
-  color: #555555;
-  border: 1px solid #555555;
+  background-color: #1f2833;
+  color: white;
+  border: 1px solid #45a29e;
   cursor: pointer;
-  font-size: 0.8em;
 }
 
 .status-select:focus {
@@ -765,12 +740,12 @@ textarea {
 
 .modal-content {
   background: linear-gradient( #ffffff, #b740fa);
-  margin: 10% auto;
-  padding: 20px;
+  margin: 5% auto;
+  padding: 25px;
   border: 1px solid #b740fa;
   border-radius: 10px;
-  width: 90%;
-  max-width: 500px;
+  width: 80%;
+  max-width: 700px;
   box-shadow: 0 0 20px rgba(157, 45, 255, 0.651);
   position: relative;
   animation: slideDown 0.3s;
@@ -791,19 +766,19 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 1px solid #b740fa;
 }
 
 .modal-header h2 {
   color: #000000;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 .close-btn {
   color: #000000;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
   cursor: pointer;
   transition: color 0.3s;
@@ -823,16 +798,15 @@ textarea {
 
 .item-details {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
 }
 
 .item-details p {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   padding: 8px;
   background: rgba(31, 40, 51, 0.5);
   border-radius: 5px;
-  font-size: 0.9em;
 }
 
 .item-details p strong {
@@ -840,225 +814,18 @@ textarea {
 }
 
 .modal-footer {
-  margin-top: 15px;
+  margin-top: 20px;
   display: flex;
   justify-content: flex-end;
-  gap: 8px;
-  padding-top: 10px;
+  gap: 10px;
+  padding-top: 15px;
   border-top: 1px solid #fff000;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #b740fa;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #55185d;
-}
-
-/* Responsive Styles */
-@media (min-width: 768px) {
-  .split-container {
-    flex-direction: row;
-  }
-
-  .form-side {
-    order: 0;
-    padding: 40px;
-  }
-
-  .left-section {
-    min-height: 100vh;
-  }
-
-  .logo {
-    width: 200px;
-  }
-
-  .website-title {
-    font-size: 2.5em;
-  }
-
-  .description {
-    font-size: 1em;
-  }
-
-  .header h1 {
-    font-size: 2rem;
-  }
-
-  .header h3 {
-    font-size: 2rem;
-  }
-
+/* Responsive */
+@media (max-width: 768px) {
   .form-row {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-
-  .service-options {
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .service-options .box {
-    width: 300px;
-  }
-
-  .service-options .box .content .title {
-    font-size: 24px;
-  }
-
-  .service-options .box .content p {
-    font-size: 14px;
-  }
-
-  .modal-content {
-    width: 80%;
-    padding: 25px;
-  }
-
-  .modal-header h2 {
-    font-size: 1.5rem;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    padding: 30px;
-  }
-
-  .role-options,
-  .service-options,
-  .stats {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-  }
-
-  .service-options {
-    justify-content: space-between;
-  }
-}
-
-/* Small mobile devices */
-@media (max-width: 480px) {
-  .status-bar {
-    padding: 10px 15px;
-    height: 80px;
-  }
-
-  .website-title {
-    font-size: 1.5rem;
-  }
-
-  .status-controls {
-    gap: 8px;
-  }
-
-  .notification-btn,
-  .logout-btn {
-    padding: 8px 10px;
-  }
-
-  .logout-icon,
-  .notif-icon {
-    height: 24px;
-    width: 24px;
-  }
-
-  .left-section {
-    padding: 20px;
-  }
-
-  .logo {
-    width: 120px;
-    margin-bottom: 15px;
-  }
-
-  .website-title {
-    font-size: 1.8em;
-  }
-
-  .description {
-    font-size: 0.8em;
-  }
-
-  .container {
-    padding: 15px;
-  }
-
-  .header h1 {
-    font-size: 1.5rem;
-  }
-
-  .header h2 {
-    font-size: 0.9rem;
-  }
-
-  .role-card,
-  .service-card,
-  .stat-card {
-    padding: 15px;
-  }
-
-  .role-card h3,
-  .service-card h3 {
-    font-size: 1.1rem;
-  }
-
-  .stat-value {
-    font-size: 1.5rem;
-  }
-
-  .tab-btn {
-    padding: 6px 12px;
-    font-size: 13px;
-  }
-
-  .modal-content {
-    margin: 20% auto;
-    padding: 15px;
-  }
-}
-
-/* Very small devices (landscape phones, less than 576px) */
-@media (max-width: 360px) {
-  .website-title {
-    font-size: 1.2rem;
-  }
-
-  .status-controls {
-    gap: 5px;
-  }
-
-  .notification-btn,
-  .logout-btn {
-    padding: 6px 8px;
-    font-size: 0.9rem;
-  }
-
-  .left-section {
-    padding: 15px;
-  }
-
-  .logo {
-    width: 100px;
-  }
-
-  .website-title {
-    font-size: 1.5em;
+    grid-template-columns: 1fr;
   }
 
   .role-options,
@@ -1067,15 +834,82 @@ textarea {
     grid-template-columns: 1fr;
   }
 
+  .container {
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header h2 {
+    font-size: 1.2rem;
+  }
+
+  .tab-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .nav-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .notification-area {
+    order: 1;
+  }
+
+  #notif-panel {
+    width: 100%;
+    right: auto;
+    left: 0;
+  }
+
+  /* Modal adjustments */
+  .modal-content {
+    width: 90%;
+    margin: 10% auto;
+  }
+
+  .item-details {
+    grid-template-columns: 1fr;
+  }
+
+  /* Responsive styles for hover buttons */
   .service-options .box {
+    width: 250px;
     height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .status-content {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .service-options .box {
+    width: 280px;
+    height: 280px;
   }
 
   .service-options .box .content .title {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .service-options .box .content p {
-    font-size: 12px;
+    font-size: 13px;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .modal-footer {
+    flex-direction: column;
   }
 }
