@@ -3,84 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barangay Management System</title>
+    <title data-i18n="page_title">Barangay Management System</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Language Selector (Top Right) -->
+    <div class="language-selector">
+        <select id="language-select">
+            <option value="" selected disabled data-i18n="select_language_type">Select Your Preffered Language</option>
+            <option value="en" data-i18n="english">English</option>
+            <option value="tl" data-i18n="tagalog">Tagalog</option>
+            <option value="ceb" data-i18n="bisaya">Bisaya</option>
+        </select>
+    </div>
+    <!-- Chatbot Container -->
+    <div class="chatbot-container">
+      <!-- Chatbot Icon (Pokemon-sized) -->
+      <div class="chatbot-icon">
+        <img src="images/chatbot.png" alt="Chatbot">
+      </div>
+      
+      <!-- Chatbot Window (hidden by default) -->
+      <div class="chatbot-window">
+        <div class="chatbot-header">
+          <h3 data-i18n="chatbot_title">Longosian - Barangay Longos Help Desk Assistant</h3>
+          <button class="close-chatbot">&times;</button>
+        </div>
+        <div class="chatbot-messages">
+          <div class="chatbot-message bot-message">
+            <img src="images/hi.png" alt="Bot Avatar" class="bot-avatar">
+            <div class="message-bubble">
+              <p data-i18n="chatbot_greeting">Hello! I'm Longosian, your personal help desk bot! Feel free to chat with me for help.</p>
+            </div>
+          </div>
+        </div>
+        <div class="chatbot-input">
+          <input type="text" placeholder="Type your question..." data-i18n-placeholder="chatbot_placeholder">
+          <button class="send-button" data-i18n="chatbot_send">Send</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Split Screen Container -->
     <div id="split-screen-container">
         <div class="split-container">
             <div class="left-section">
               <img src="images/Logo.png" alt="Barangay Longos Logo" class="logo">
-              <h1 class="website-title">Barangay Management System</h1>
-              <p class="description">Access and manage essential barangay services online. Submit requests, complaints, and stay updated with Barangay Longos, Malabon City.</p>
+              <h1 class="website-title" data-i18n="title">Barangay Management System</h1>
+              <p class="description" data-i18n="welcome">Access and manage essential barangay services online. Submit requests, complaints, and stay updated with Barangay Longos, Malabon City.</p>
             </div>
             <div class="form-side">
-                <!-- Role Selection Container -->
-                <div class="container" id="role-selection-container" style="display: none">
-                  <div class="header">
-                    <h1>Magandang Araw, Barangay Longos!</h1>
-                    <h2>Click or Tap User Type</h2>
-                  </div>
-
-                  <div class="role-options">
-                    <div class="role-card" data-role="resident">
-                      <h3>Resident</h3>
-                      <p>Access services and submit requests</p>
-                    </div>
-
-                    <div class="role-card" data-role="staff">
-                      <h3>Barangay Staff</h3>
-                      <p>Manage resident requests and services</p>
-                    </div>
-
-                    <div class="role-card" data-role="admin">
-                      <h3>Admin</h3>
-                      <p>System administration and management</p>
-                    </div>
-                  </div>
-                </div>
-                
                 <!-- Login Container -->
                 <div class="container" id="login-container">
                   <div class="header">
-                    <h1>Hello po! Halina't Mag-log in!</h1>
-                    <h2>Log In</h2>
+                    <h1 data-i18n="login_greeting">Hello! Come and log in!</h1>
+                    <h2 data-i18n="login_title">Log In</h2>
                   </div>
-
-                  <div class="nav-controls">
-                    <button type="button" class="nav-btn" id="back-btn">Back</button>
-                  </div>
-
                   <div class="form-container">
                     <form id="login-form">
                       <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" required />
+                        <label for="email" data-i18n="email">Email</label>
+                        <input type="email" id="email" data-i18n-placeholder="email_placeholder" required />
                       </div>
 
                       <div class="form-group">
-                        <label for="password">Password</label>
+                        <label for="password" data-i18n="password">Password</label>
                         <div class="password-container">
-                          <input type="password" id="password" required />
+                          <input type="password" id="password" data-i18n-placeholder="password_placeholder" required />
                           <span class="toggle-password" id="togglePassword">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" fill="currentColor">
                               <path d="M12 6c-3.95 0-7.2 2.3-9 6 1.8 3.7 5.05 6 9 6s7.2-2.3 9-6c-1.8-3.7-5.05-6-9-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6.5A2.5 2.5 0 0 0 9.5 12 2.5 2.5 0 0 0 12 14.5 2.5 2.5 0 0 0 14.5 12 2.5 2.5 0 0 0 12 9.5z"/>
-                              <path d="M22 2L2 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M22 2L2 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                             </svg>
                           </span>
                         </div>
-                        <p class="caps-warning" id="capsWarningLogin" style="display: none;">⚠️ Caps Lock is on</p>
+                        <p class="caps-warning" id="capsWarningLogin" style="display: none;" data-i18n="caps_warning">⚠️ Caps Lock is on</p>
                       </div>
 
-                      <button type="submit" class="btn">Log In</button>
+                      <button type="submit" class="btn" data-i18n="login_btn">Log In</button>
                     </form>
 
                     <div class="switch-form">
                       <p>
-                        Don't have an account?
-                        <a href="#" id="show-signup">Create an Account</a>
+                        <span data-i18n="no_account">Don't have an account?</span>
+                        <a href="#" id="show-signup" data-i18n="create_account">Create an Account</a>
                       </p>
                     </div>
                   </div>
@@ -89,12 +96,12 @@
                 <!-- Signup Container -->
                 <div class="container" id="signup-container" style="display: none">
                   <div class="header">
-                    <h1>Barangay Management System</h1>
-                    <h2>Create an Account</h2>
+                    <h1 data-i18n="title">Barangay Management System</h1>
+                    <h2 data-i18n="create_account">Create an Account</h2>
                   </div>
 
                   <div class="nav-controls">
-                    <button type="button" class="nav-btn" id="back-btn">Back</button>
+                    <button type="button" class="nav-btn" id="back-btn" data-i18n="back">Back</button>
                     <button class="logout-btn">
                       <img class="logout-icon" src="images/logout.png" alt="Logout">
                     </button>
@@ -103,62 +110,65 @@
                   <div class="form-container">
                     <form id="signup-form">
                       <div class="form-group">
-                        <label for="signup-email">Email</label>
-                        <input type="email" id="signup-email" required />
+                        <label for="signup-email" data-i18n="email">Email</label>
+                        <input type="email" id="signup-email" data-i18n-placeholder="email_placeholder" required />
                       </div>
 
                       <div class="form-group">
-                        <label for="first-name">First Name</label>
-                        <input type="text" id="first-name" required />
+                        <label for="first-name" data-i18n="first_name">First Name</label>
+                        <input type="text" id="first-name" data-i18n-placeholder="first_name_placeholder" required />
                       </div>
 
                       <div class="form-group">
-                        <label for="last-name">Last Name</label>
-                        <input type="text" id="last-name" required />
+                        <label for="last-name" data-i18n="last_name">Last Name</label>
+                        <input type="text" id="last-name" data-i18n-placeholder="last_name_placeholder" required />
                       </div>
 
                       <div class="form-group">
-                        <label for="user-type">Type of User</label>
+                        <label for="user-type" data-i18n="user_type">Type of User</label>
                         <select id="user-type" required>
-                          <option value="" selected disabled>Select User Type</option>
-                          <option value="resident">Resident</option>
-                          <option value="staff">Barangay Staff</option>
-                          <option value="admin">Admin</option>
+                          <option value="" selected disabled data-i18n="select_user_type">Select User Type</option>
+                          <option value="resident" data-i18n="resident">Resident</option>
+                          <option value="staff" data-i18n="staff">Barangay Staff</option>
+                          <option value="admin" data-i18n="admin">Admin</option>
                         </select>
                       </div>
 
                       <div class="form-group">
-                        <label for="signup-password">Password</label>
+                        <label for="signup-password" data-i18n="password">Password</label>
                         <div class="password-container">
-                          <input type="password" id="signup-password" required />
+                          <input type="password" id="signup-password" data-i18n-placeholder="password_placeholder" required />
                           <span class="toggle-password" id="toggleSignupPassword">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" fill="currentColor">
                               <path d="M12 6c-3.95 0-7.2 2.3-9 6 1.8 3.7 5.05 6 9 6s7.2-2.3 9-6c-1.8-3.7-5.05-6-9-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6.5A2.5 2.5 0 0 0 9.5 12 2.5 2.5 0 0 0 12 14.5 2.5 2.5 0 0 0 14.5 12 2.5 2.5 0 0 0 12 9.5z"/>
-                              <path d="M22 2L2 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M22 2L2 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                             </svg>
                           </span>
                         </div>
-                        <p class="caps-warning" id="capsWarningSignup" style="display: none;">⚠️ Caps Lock is on</p>
+                        <p class="caps-warning" id="capsWarningSignup" style="display: none;" data-i18n="caps_warning">⚠️ Caps Lock is on</p>
                       </div>
 
                       <div class="form-group">
-                        <label for="confirm-password">Confirm Password</label>
+                        <label for="confirm-password" data-i18n="confirm_password">Confirm Password</label>
                         <div class="password-container">
-                          <input type="password" id="confirm-password" required />
+                          <input type="password" id="confirm-password" data-i18n-placeholder="confirm_password_placeholder" required />
                           <span class="toggle-password" id="toggleConfirmPassword">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" fill="currentColor">
                               <path d="M12 6c-3.95 0-7.2 2.3-9 6 1.8 3.7 5.05 6 9 6s7.2-2.3 9-6c-1.8-3.7-5.05-6-9-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6.5A2.5 2.5 0 0 0 9.5 12 2.5 2.5 0 0 0 12 14.5 2.5 2.5 0 0 0 14.5 12 2.5 2.5 0 0 0 12 9.5z"/>
-                              <path d="M22 2L2 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M22 2L2 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                             </svg>
                           </span>
                         </div>
                       </div>
 
-                      <button type="submit" class="btn">Sign Up</button>
+                      <button type="submit" class="btn" data-i18n="signup_btn">Sign Up</button>
                     </form>
 
                     <div class="switch-form">
-                      <p>Already have an account? <a href="#" id="show-login">Sign In</a></p>
+                      <p>
+                        <span data-i18n="have_account">Already have an account?</span>
+                        <a href="#" id="show-login" data-i18n="sign_in">Sign In</a>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -166,11 +176,11 @@
         </div>
     </div>
     
-    
+    <div id="full-screen-container" style="display: none">
         <!-- Status Bar -->
         <div class="status-bar">
             <div class="status-content">
-                <h1 class="website-title">Barangay Management System</h1>
+                <h1 class="website-title" data-i18n="title">Barangay Management System</h1>
                 <div class="status-controls">
                     <button class="notification-btn" id="notif-icon">
                       <img class="notif-icon" src="images/notification.png" alt="Notification">
@@ -181,12 +191,10 @@
                     </button>
                 </div>
             </div>
-			<br></br>
-		<div id="full-screen-container" style="display: none">
         <div class="nav-controls">
             <div class="notification-area">
               <div id="notif-panel" class="notif-panel" style="display: none;">
-                <h4>Notifications</h4>
+                <h4 data-i18n="notifications">Notifications</h4>
                 <ul id="notif-list"></ul>
               </div>
             </div>
@@ -195,18 +203,18 @@
         <!-- Resident Container -->
         <div class="container" id="resident-container" style="display: none">
           <div class="header">
-            <h2>Select A Service</h2>
+            <h1 data-i18n="select_service">Select A Service</h1>
           </div>
 
           <div class="service-options">
             <div class="box">
               <button data-service="request" class="service-btn">
                 <div class="imgBx">
-                  <img src="images/1.jpeg" alt="Request Catalog">
+                  <img src="images/1.jpeg" alt="Request Service">
                 </div>
                 <div class="content">
-                  <h2 class="title">Request a Document</h2>
-                  <p>Choose the document you need, answer the form, submit, and pick it up.</p>
+                  <h2 class="title" data-i18n="request_service">Request a Service</h2>
+                  <p data-i18n="request_service_desc">Request various barangay services like street lighting, drainage cleaning, etc.</p>
                 </div>
               </button>
             </div>
@@ -217,8 +225,8 @@
                   <img src="images/2.jpg" alt="Complaint Form">
                 </div>
                 <div class="content">
-                  <h2 class="title">File a Complaint</h2>
-                  <p>Report complaint for the improvement of our community.</p>
+                  <h2 class="title" data-i18n="file_complaint">File a Complaint</h2>
+                  <p data-i18n="file_complaint_desc">Report complaint for the improvement of our community.</p>
                 </div>
               </button>
             </div>
@@ -229,8 +237,8 @@
                   <img src="images/3.jpg" alt="Other Services">
                 </div>
                 <div class="content">
-                  <h2 class="title">Other Services</h2>
-                  <p>Submit suggestions, feedback, or donations</p>
+                  <h2 class="title" data-i18n="other_services">Other Services</h2>
+                  <p data-i18n="other_services_desc">Submit suggestions, feedback, or donations</p>
                 </div>
               </button>
             </div>
@@ -240,18 +248,18 @@
         <!-- Tracking Container -->
         <div class="container" id="tracking-container" style="display: none">
           <div class="header">
-            <h1>My Submissions</h1>
-            <h2>Track your requests and complaints</h2>
+            <h1 data-i18n="my_submissions">My Submissions</h1>
+            <h2 data-i18n="track_submissions">Track your requests and complaints</h2>
           </div>
 
           <div class="nav-controls">
-            <button type="button" class="nav-btn" id="back-btn">Back</button>
+            <button type="button" class="nav-btn" id="back-btn" data-i18n="back">Back</button>
           </div>
 
           <div class="tracking-tabs">
-            <button type="button" class="tab-btn active" data-tab="requests">My Requests</button>
-            <button type="button" class="tab-btn" data-tab="complaints">My Complaints</button>
-            <button type="button" class="tab-btn" data-tab="others">My Other Services</button>
+            <button type="button" class="tab-btn active" data-tab="requests" data-i18n="my_requests">My Requests</button>
+            <button type="button" class="tab-btn" data-tab="complaints" data-i18n="my_complaints">My Complaints</button>
+            <button type="button" class="tab-btn" data-tab="others" data-i18n="my_other_services">My Other Services</button>
           </div>
 
           <div class="tracking-content">
@@ -260,11 +268,11 @@
                 <table class="tracking-table">
                   <thead>
                     <tr>
-                      <th>Request ID</th>
-                      <th>Type</th>
-                      <th>Date Submitted</th>
-                      <th>Status</th>
-                      <th>Actions</th>
+                      <th data-i18n="request_id">Request ID</th>
+                      <th data-i18n="type">Type</th>
+                      <th data-i18n="date_submitted">Date Submitted</th>
+                      <th data-i18n="status">Status</th>
+                      <th data-i18n="actions">Actions</th>
                     </tr>
                   </thead>
                   <tbody id="requests-list"></tbody>
@@ -277,11 +285,12 @@
                 <table class="tracking-table">
                   <thead>
                     <tr>
-                      <th>Complaint ID</th>
-                      <th>Type</th>
-                      <th>Date Submitted</th>
-                      <th>Status</th>
-                      <th>Actions</th>
+                      <th data-i18n="complaint_id">Complaint ID</th>
+                      <th data-i18n="type">Type</th>
+                      <th data-i18n="date_submitted">Date Submitted</th>
+                      <th data-i18n="status">Status</th>
+                      <th data-i18n="media">Media</th>
+                      <th data-i18n="actions">Actions</th>
                     </tr>
                   </thead>
                   <tbody id="complaints-list"></tbody>
@@ -294,11 +303,11 @@
                 <table class="tracking-table">
                   <thead>
                     <tr>
-                      <th>Service ID</th>
-                      <th>Type</th>
-                      <th>Date Submitted</th>
-                      <th>Status</th>
-                      <th>Actions</th>
+                      <th data-i18n="service_id">Service ID</th>
+                      <th data-i18n="type">Type</th>
+                      <th data-i18n="date_submitted">Date Submitted</th>
+                      <th data-i18n="status">Status</th>
+                      <th data-i18n="actions">Actions</th>
                     </tr>
                   </thead>
                   <tbody id="others-list"></tbody>
@@ -308,176 +317,235 @@
           </div>
         </div>
 
-        <!-- Request Form Container -->
+        <!-- Request Service Container --> 
         <div class="container" id="request-form-container" style="display: none">
           <div class="header">
-            <h2>Request Form</h2>
+            <h2 data-i18n="request_form">Request Form</h2>
           </div>
 
           <div class="nav-controls">
-            <button type="button" class="nav-btn" id="back-btn">Back</button>
-            <button type="button" class="nav-btn" id="tracking-btn">My Submissions</button>
+            <button type="button" class="nav-btn" id="back-btn" data-i18n="back">Back</button>
+            <button type="button" class="nav-btn" id="tracking-btn" data-i18n="my_submissions">My Submissions</button>
           </div>
 
           <form id="request-form">
             <div class="form-row">
               <div class="form-group">
-                <label for="barangay-id">Email</label>
-                <input type="text" id="barangay-id" />
+                <label for="barangay-id" data-i18n="email">Email</label>
+                <input type="email" id="barangay-id" data-i18n-placeholder="email_example" placeholder="juandelacruz@gmail.com" required />
               </div>
 
               <div class="form-group">
-                <label for="submit-plan">Request</label>
-                <select type="" id="request">
-                    <option value="" selected disabled>Select Request</option>
-                    <option value="Barangay ID">Barangay ID</option>
-                    <option value="Solo Parent ID">Solo Parent ID</option>
-                    <option value="CoI">Certificate of Indigency</option>
-                    <option value="CoR">Certificate of Residency</option>
+                <label for="request-type" data-i18n="request">Request</label>
+                <select id="request-type" required>
+                    <option value="" selected disabled data-i18n="select_request">Select Request</option>
+                    <option value="Street Lighting" data-i18n="st_lighting">Street Lighting</option>
+                    <option value="Drainage Cleaning" data-i18n="drainage_cleaning">Drainage Cleaning</option>
+                    <option value="Assistance For Senior Citizens" data-i18n="ASC">Assistance For Senior Citizens</option>
+                    <option value="Garbage collection and waste management" data-i18n="gcwm">Garbage collection and waste management</option>
+                    <option value="Barangay health services" data-i18n="bhs">Barangay Health Services</option>
+                    <option value="Peace and order/security patrols" data-i18n="posp">Peace and Order/Security Patrols</option>                      
+                    <option value="Youth and sports development programs" data-i18n="ysdp">Youth and Sports Development Programs</option>
+                    <option value="Installation or repair of CCTV in public areas" data-i18n="cctv">Installation or Repair of CCTV in Public Areas</option>
+                    <option value="Other" data-i18n="other_option">Other (please specify)</option>
                 </select>
               </div>
             </div>
 
+            <div class="form-group" id="other-request-container" style="display: none;">
+              <label for="other-request" data-i18n="specify_request">Please specify your request</label>
+              <input type="text" id="other-request" data-i18n-placeholder="specify_request_placeholder" placeholder="Please describe your request" />
+            </div>
+
             <div class="form-row">
               <div class="form-group">
-                <label for="first-name-req">First Name</label>
-                <input type="text" id="first-name-req" />
+                <label for="first-name-req" data-i18n="first_name">First Name</label>
+                <input type="text" id="first-name-req" data-i18n-placeholder="first_name_placeholder" placeholder="Please type your first name." required />
               </div>
 
               <div class="form-group">
-                <label for="last-name-req">Last Name</label>
-                <input type="text" id="last-name-req" />
+                <label for="last-name-req" data-i18n="last_name">Last Name</label>
+                <input type="text" id="last-name-req" data-i18n-placeholder="last_name_placeholder" placeholder="Please type your last name." required />
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" id="address" />
-              </div>
-
+                <label for="address" data-i18n="address">Address</label>
+                <input type="text" id="address" data-i18n-placeholder="address_placeholder" placeholder="House No., Street, Barangay, City" required />
+                </div>
               <div class="form-group">
-                <label for="contact-number">Contact Number</label>
-                <input type="text" id="contact-number" />
+                <label for="contact-number" data-i18n="contact_number">Contact Number</label>
+                <input
+                  type="tel"
+                  id="contact-number"
+                  name="contact-number"
+                  maxlength="11"
+                  required pattern="^[0-9]{10,11}$"
+                  data-i18n-placeholder="contact_number_placeholder"
+                  placeholder="09XXXXXXXXX"
+                  oninput="this.value = this.value.replace(/[^0-9]/g, '');"/>
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
-                <label for="dob">Date of Birth</label>
-                <input type="date" id="dob" />
+                <label for="dob" data-i18n="dob">Date of Birth</label>
+                <input type="date" id="dob" required />
               </div>
 
               <div class="form-group">
-                <label for="gender">Gender</label>
-                <select id="gender">
-                  <option value="" selected disabled>Select Gender</option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  <option value="other">Other</option>
+                <label for="gender" data-i18n="gender">Gender</label>
+                <select id="gender" required>
+                  <option value="" selected disabled data-i18n="select_gender">Select Gender</option>
+                  <option value="male" data-i18n="male">Male</option>
+                  <option value="female" data-i18n="female">Female</option>
+                  <option value="other" data-i18n="other_gender">Other</option>
                 </select>
               </div>
             </div>
 
-            <button type="submit" class="btn">Submit Request</button>
+            <button type="submit" class="btn" data-i18n="submit_request">Submit Request</button>
           </form>
         </div>
 
         <!-- Complaint Form Container -->
         <div class="container" id="complaint-form-container" style="display: none">
           <div class="header">
-            <h2>Complaint Form</h2>
+            <h2 data-i18n="complaint_form">Complaint Form</h2>
           </div>
 
           <div class="nav-controls">
-            <button type="button" class="nav-btn" id="back-btn">Back</button>
-            <button type="button" class="nav-btn" id="tracking-btn">My Submissions</button>
+            <button type="button" class="nav-btn" id="back-btn" data-i18n="back">Back</button>
+            <button type="button" class="nav-btn" id="tracking-btn" data-i18n="my_submissions">My Submissions</button>
           </div>
 
           <form id="complaint-form">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="first-name-comp">First Name</label>
-                <input type="text" id="first-name-comp" />
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="anonymous-complaint">
+                <span data-i18n="submit_anonymously">Submit anonymously</span>
+              </label>
+            </div>
+
+            <div id="complaint-user-details">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first-name-comp" data-i18n="first_name">First Name</label>
+                  <input type="text" id="first-name-comp" data-i18n-placeholder="first_name_placeholder" placeholder="Please type your first name." />
+                </div>
+
+                <div class="form-group">
+                  <label for="last-name-comp" data-i18n="last_name">Last Name</label>
+                  <input type="text" id="last-name-comp" data-i18n-placeholder="last_name_placeholder" placeholder="Please type your last name." />
+                </div>
               </div>
 
               <div class="form-group">
-                <label for="last-name-comp">Last Name</label>
-                <input type="text" id="last-name-comp" />
+                <label for="address-comp" data-i18n="address">Address</label>
+                <input type="text" id="address-comp" data-i18n-placeholder="address_placeholder" placeholder="House No., Street, Barangay, City" />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-number" data-i18n="contact_number">Contact Number</label>
+                  <input
+                    type="tel"
+                    id="contact-number"
+                    name="contact-number"
+                    maxlength="11"
+                    pattern="^[0-9]{10,11}$"
+                    data-i18n-placeholder="contact_number_placeholder"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '');"/>
+                </div>
+
+                <div class="form-group">
+                  <label for="email-comp" data-i18n="email">Email</label>
+                  <input type="email" id="email-comp" data-i18n-placeholder="email_example" placeholder="juandelacruz@gmail.com" />
+                </div>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="address-comp">Address</label>
-              <input type="text" id="address-comp" />
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="contact-number-comp">Contact Number</label>
-                <input type="text" id="contact-number-comp" />
-              </div>
-
-              <div class="form-group">
-                <label for="email-comp">Email</label>
-                <input type="email" id="email-comp" />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="complaint-type">Type of Complaint</label>
-              <select id="complaint-type">
-                <option value="">Choose the type of your complaint</option>
-                <option value="noise">Noise Complaint</option>
-                <option value="property">Property Issue</option>
-                <option value="sanitation">Sanitation Concern</option>
-                <option value="safety">Safety Concern</option>
-                <option value="other">Other</option>
+              <label for="complaint-type" data-i18n="complaint_type">Type of Complaint</label>
+              <select id="complaint-type" required>
+                <option value="" data-i18n="select_complaint_type">Choose the type of your complaint</option>
+                <option value="noise" data-i18n="noise">Noise Complaint</option>
+                <option value="property" data-i18n="property">Property Issue</option>
+                <option value="sanitation" data-i18n="sanitation">Sanitation Concern</option>
+                <option value="safety" data-i18n="safety">Safety Concern</option>
+                <option value="other" data-i18n="other_complaint">Other</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="complaint-details">Complaint Details</label>
-              <textarea id="complaint-details" rows="4"></textarea>
+              <label for="complaint-details" data-i18n="complaint_details">Complaint Details</label>
+              <textarea id="complaint-details" rows="4" data-i18n-placeholder="complaint_details_placeholder" placeholder="Please describe your complaint." required></textarea>
             </div>
 
-            <button type="submit" class="btn">Submit Complaint</button>
+            <div class="form-group">
+              <label for="complaint-media" data-i18n="attach_media">Attach photos or videos (optional):</label>
+              <input type="file" id="complaint-media" accept="image/*,video/*" multiple>
+              <div id="media-preview-container" style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 10px;"></div>
+            </div>
+
+            <button type="submit" class="btn" data-i18n="submit_complaint">Submit Complaint</button>
           </form>
         </div>
 
         <!-- Other Services Form Container -->
         <div class="container" id="other-form-container" style="display: none">
           <div class="header">
-            <h2>Other Services</h2>
+            <h2 data-i18n="other_services">Other Services</h2>
           </div>
 
           <div class="nav-controls">
-            <button type="button" class="nav-btn" id="back-btn" id="backToServicesFromOthers">Back</button>
-            <button type="button" class="nav-btn" id="tracking-btn">My Submissions</button>
+            <button type="button" class="nav-btn" id="back-btn" id="backToServicesFromOthers" data-i18n="back">Back</button>
+            <button type="button" class="nav-btn" id="tracking-btn" data-i18n="my_submissions">My Submissions</button>
           </div>
-
-          <div class="complaint-form">
+          <div class="complaint-form" required>
             <form id="otherServicesForm">
+              <div id="service-user-details">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="first-name-service" data-i18n="first_name">First Name</label>
+                    <input type="text" id="first-name-service" data-i18n-placeholder="first_name_placeholder" placeholder="Please type your first name." />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="last-name-service" data-i18n="last_name">Last Name</label>
+                    <input type="text" id="last-name-service" data-i18n-placeholder="last_name_placeholder" placeholder="Please type your last name." />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="email-service" data-i18n="email">Email</label>
+                  <input type="email" id="email-service" data-i18n-placeholder="email_example" placeholder="juandelacruz@gmail.com" />
+                </div>
+              </div>
+
               <div class="form-group">
-                <label for="serviceType">Service Type</label>
+                <label for="serviceType" data-i18n="service_type">Service Type</label>
                 <select id="serviceType" required>
-                  <option value="" disabled selected>Select service type</option>
-                  <option value="Suggestion">Suggestion</option>
-                  <option value="Feedback">Feedback</option>
-                  <option value="Donation">Donation</option>
-                  <option value="Volunteer">Volunteer</option>
-                  <option value="Blotter">Volunteer</option>
+                  <option value="" disabled selected data-i18n="select_service_type">Select service type</option>
+                  <option value="Suggestion" data-i18n="suggestion">Suggestion</option>
+                  <option value="Feedback" data-i18n="feedback">Feedback</option>
+                  <option value="Donation" data-i18n="donation">Donation</option>
+                  <option value="Volunteer" data-i18n="volunteer">Volunteer</option>
+                  <option value="Blotter" data-i18n="blotter">Blotter</option>
+                  <option value="Report a Bug or Website Error" data-i18n="bug">Report a Bug or Website Error</option>
+                  <option value="Request a Document" data-i18n="docs">Request a Document</option>
                 </select>
               </div>
               <div class="form-group">
-                <label for="serviceDetails">Details</label>
+                <label for="serviceDetails" data-i18n="details">Details</label>
                 <textarea id="serviceDetails" rows="4" required></textarea>
               </div>
               <div class="form-group" id="donationAmountGroup" style="display: none;">
-                <label for="donationAmount">Donation Amount (PHP)</label>
+                <label for="donationAmount" data-i18n="donation_amount">Donation Amount (PHP)</label>
                 <input type="number" id="donationAmount" min="0">
               </div>
-              <button type="submit" class="btn">Submit</button>
+              <button type="submit" class="btn" data-i18n="submit_service">Submit</button>
             </form>
           </div>
         </div>
@@ -485,14 +553,14 @@
         <!-- Staff Container -->
         <div class="container" id="staff-container" style="display: none">
           <div class="header">
-            <h3>Barangay Staff Portal</h3>
-            <p>Please enter your staff password to continue</p>
+            <h1 data-i18n="staff_portal">Barangay Staff Portal</h1>
+            <p data-i18n="staff_portal_desc">Please enter your staff password to continue</p>
           </div>
 
           <div class="form-container">
             <form id="staff-auth-form">
               <div class="form-group">
-                <label for="staff-password">Staff Password</label>
+                <label for="staff-password" data-i18n="staff_password">Staff Password</label>
                 <div class="password-container">
                   <input type="password" id="staff-password" required />
                   <span class="toggle-password" id="toggleStaffPassword">
@@ -503,7 +571,7 @@
                   </span>
                 </div>
               </div>
-              <button type="submit" class="btn">Authenticate</button>
+              <button type="submit" class="btn" data-i18n="authenticate">Authenticate</button>
             </form>
           </div>
         </div>
@@ -511,14 +579,14 @@
         <!-- Admin Container -->
         <div class="container" id="admin-container" style="display: none">
           <div class="header">
-            <h3>Admin Portal</h3>
-            <p>Please enter your admin password to continue</p>
+            <h1 data-i18n="admin_portal">Admin Portal</h1>
+            <p data-i18n="admin_portal_desc">Please enter your admin password to continue</p>
           </div>
 
           <div class="form-container">
             <form id="admin-auth-form">
               <div class="form-group">
-                <label for="admin-password">Admin Password</label>
+                <label for="admin-password" data-i18n="admin_password">Admin Password</label>
                 <div class="password-container">
                   <input type="password" id="admin-password" required />
                   <span class="toggle-password" id="toggleAdminPassword">
@@ -530,7 +598,7 @@
                 </div>
               </div>
 
-              <button type="submit" class="btn">Authenticate</button>
+              <button type="submit" class="btn" data-i18n="authenticate">Authenticate</button>
             </form>
           </div>
         </div>
@@ -538,32 +606,32 @@
         <!-- Staff Dashboard -->
         <div class="container" id="staff-dashboard" style="display: none">
           <div class="header">
-            <h3>Barangay Staff Dashboard</h3>
+            <h3 data-i18n="staff_dashboard">Barangay Staff Dashboard</h3>
           </div>
           <div class="dashboard">
             <div class="stats">
               <div class="stat-card">
-                <h3>Pending Requests</h3>
+                <h3 data-i18n="pending">Pending</h3>
                 <p class="stat-value" id="pending-count">0</p>
               </div>
 
               <div class="stat-card">
-                <h3>Processing</h3>
+                <h3 data-i18n="processing">Processing</h3>
                 <p class="stat-value" id="processing-count">0</p>
               </div>
 
               <div class="stat-card">
-                <h3>Completed</h3>
+                <h3 data-i18n="completed">Completed</h3>
                 <p class="stat-value" id="completed-count">0</p>
               </div>
             </div>
 
             <div class="staff-actions">
-              <h2>Manage Submissions</h2>
+              <h2 data-i18n="manage_submissions">Manage Submissions</h2>
               <div class="submission-tabs">
-                <button type="button" class="tab-btn active" data-tab="requests">Requests</button>
-                <button type="button" class="tab-btn" data-tab="complaints">Complaints</button>
-                <button type="button" class="tab-btn" data-tab="others">Other Services</button>
+                <button type="button" class="tab-btn active" data-tab="requests" data-i18n="requests">Requests</button>
+                <button type="button" class="tab-btn" data-tab="complaints" data-i18n="complaints">Complaints</button>
+                <button type="button" class="tab-btn" data-tab="others" data-i18n="other_services">Other Services</button>
               </div>
 
               <div class="submission-content">
@@ -572,12 +640,13 @@
                     <table class="submission-table">
                       <thead>
                         <tr>
-                          <th>ID</th>
-                          <th>Resident</th>
-                          <th>Type</th>
-                          <th>Date</th>
-                          <th>Status</th>
-                          <th>Action</th>
+                          <th data-i18n="id">ID</th>
+                          <th data-i18n="resident">Resident</th>
+                          <th data-i18n="type">Type</th>
+                          <th data-i18n="date">Date</th>
+                          <th data-i18n="status">Status</th>
+                          <th data-i18n="action">Action</th>
+                          <th>      </th>                           
                         </tr>
                       </thead>
                       <tbody id="staff-requests-list"></tbody>
@@ -590,12 +659,14 @@
                     <table class="submission-table">
                       <thead>
                         <tr>
-                          <th>ID</th>
-                          <th>Resident</th>
-                          <th>Type</th>
-                          <th>Date</th>
-                          <th>Status</th>
-                          <th>Action</th>
+                          <th data-i18n="id">ID</th>
+                          <th data-i18n="resident">Resident</th>
+                          <th data-i18n="type">Type</th>
+                          <th data-i18n="date">Date</th>
+                          <th data-i18n="status">Status</th>
+                          <th data-i18n="media">Media</th>
+                          <th data-i18n="action">Action</th>
+                          <th>      </th>
                         </tr>
                       </thead>
                       <tbody id="staff-complaints-list"></tbody>
@@ -608,12 +679,13 @@
                     <table class="submission-table">
                       <thead>
                         <tr>
-                          <th>ID</th>
-                          <th>Resident</th>
-                          <th>Type</th>
-                          <th>Date</th>
-                          <th>Status</th>
-                          <th>Action</th>
+                          <th data-i18n="id">ID</th>
+                          <th data-i18n="resident">Resident</th>
+                          <th data-i18n="type">Type</th>
+                          <th data-i18n="date">Date</th>
+                          <th data-i18n="status">Status</th>
+                          <th data-i18n="action">Action</th>
+                          <th>      </th>
                         </tr>
                       </thead>
                       <tbody id="staff-others-list"></tbody>
@@ -628,73 +700,73 @@
         <!-- Admin Dashboard -->
         <div class="container" id="admin-dashboard" style="display: none">
           <div class="header">
-            <h3>Admin Dashboard</h3>
+            <h1 data-i18n="admin_dashboard">Admin Dashboard</h1>
           </div>
 
           <div class="nav-controls">
-            <button type="button" class="nav-btn active" data-page="dashboard">Dashboard</button>
-            <button type="button" class="nav-btn" data-page="status-board">Status Board</button>
+            <button type="button" class="nav-btn active" data-page="dashboard" data-i18n="dashboard">Dashboard</button>
+            <button type="button" class="nav-btn" data-page="status-board" data-i18n="status_board">Status Board</button>
           </div>
 
           <div class="dashboard">
             <div class="stats">
               <div class="stat-card">
-                <h3>Total Users</h3>
+                <h3 data-i18n="total_users">Total Users</h3>
                 <p class="stat-value" id="total-users">0</p>
               </div>
 
               <div class="stat-card">
-                <h3>Active Staff</h3>
+                <h3 data-i18n="active_staff">Active Staff</h3>
                 <p class="stat-value" id="active-staff">0</p>
               </div>
 
               <div class="stat-card">
-                <h3>Pending Issues</h3>
+                <h3 data-i18n="pending_issues">Pending Issues</h3>
                 <p class="stat-value" id="pending-issues">0</p>
               </div>
             </div>
 
             <div class="admin-actions">
-              <h2>Send Updates to Residents</h2>
+              <h2 data-i18n="send_updates">Send Updates to Residents</h2>
               <form id="email-form">
                 <div class="form-group">
-                  <label for="resident-email">Resident Email</label>
+                  <label for="resident-email" data-i18n="resident_email">Resident Email</label>
                   <select id="resident-email" required>
-                    <option value="">Select Resident</option>
+                    <option value="" data-i18n="select_resident">Select Resident</option>
                   </select>
                 </div>
 
                 <div class="form-group">
-                  <label for="concern-type">Concern Type</label>
+                  <label for="concern-type" data-i18n="concern_type">Concern Type</label>
                   <select id="concern-type" required>
-                    <option value="" selected disabled>Select Concern Type</option>
-                    <option value="request">Request Update</option>
-                    <option value="complaint">Complaint Update</option>
-                    <option value="other">Other Service Update</option>
-                    <option value="general">General Announcement</option>
+                    <option value="" selected disabled data-i18n="select_concern_type">Select Concern Type</option>
+                    <option value="request" data-i18n="request_update">Request Update</option>
+                    <option value="complaint" data-i18n="complaint_update">Complaint Update</option>
+                    <option value="other" data-i18n="other_service_update">Other Service Update</option>
+                    <option value="general" data-i18n="general_announcement">General Announcement</option>
                   </select>
                 </div>
 
                 <div class="form-group">
-                  <label for="email-subject">Subject</label>
+                  <label for="email-subject" data-i18n="subject">Subject</label>
                   <input type="text" id="email-subject" required />
                 </div>
 
                 <div class="form-group">
-                  <label for="email-message">Message</label>
+                  <label for="email-message" data-i18n="message">Message</label>
                   <textarea id="email-message" rows="5" required></textarea>
                 </div>
 
-                <button type="submit" class="btn">Send Email</button>
+                <button type="submit" class="btn" data-i18n="send_email">Send Email</button>
               </form>
             </div>
 
             <div class="admin-status-board" id="admin-status-board" style="display: none;">
-              <h2>Status Board</h2>
+              <h2 data-i18n="status_board">Status Board</h2>
               <div class="submission-tabs">
-                <button type="button" class="tab-btn active" data-tab="requests">Requests</button>
-                <button type="button" class="tab-btn" data-tab="complaints">Complaints</button>
-                <button type="button" class="tab-btn" data-tab="others">Other Services</button>
+                <button type="button" class="tab-btn active" data-tab="requests" data-i18n="requests">Requests</button>
+                <button type="button" class="tab-btn" data-tab="complaints" data-i18n="complaints">Complaints</button>
+                <button type="button" class="tab-btn" data-tab="others" data-i18n="other_services">Other Services</button>
               </div>
 
               <div class="submission-content">
@@ -703,13 +775,13 @@
                     <table class="submission-table">
                       <thead>
                         <tr>
-                          <th>ID</th>
-                          <th>Resident</th>
-                          <th>Type</th>
-                          <th>Date</th>
-                          <th>Status</th>
-                          <th>Updated By</th>
-                          <th>Actions</th>
+                          <th data-i18n="id">ID</th>
+                          <th data-i18n="resident">Resident</th>
+                          <th data-i18n="type">Type</th>
+                          <th data-i18n="date">Date</th>
+                          <th data-i18n="status">Status</th>
+                          <th data-i18n="updated_by">Updated By</th>
+                          <th data-i18n="actions">Actions</th>
                         </tr>
                       </thead>
                       <tbody id="admin-requests-list"></tbody>
@@ -722,13 +794,14 @@
                     <table class="submission-table">
                       <thead>
                         <tr>
-                          <th>ID</th>
-                          <th>Resident</th>
-                          <th>Type</th>
-                          <th>Date</th>
-                          <th>Status</th>
-                          <th>Updated By</th>
-                          <th>Actions</th>
+                          <th data-i18n="id">ID</th>
+                          <th data-i18n="resident">Resident</th>
+                          <th data-i18n="type">Type</th>
+                          <th data-i18n="date">Date</th>
+                          <th data-i18n="status">Status</th>
+                          <th data-i18n="media">Media</th>
+                          <th data-i18n="updated_by">Updated By</th>
+                          <th data-i18n="actions">Actions</th>
                         </tr>
                       </thead>
                       <tbody id="admin-complaints-list"></tbody>
@@ -741,13 +814,13 @@
                     <table class="submission-table">
                       <thead>
                         <tr>
-                          <th>ID</th>
-                          <th>Resident</th>
-                          <th>Type</th>
-                          <th>Date</th>
-                          <th>Status</th>
-                          <th>Updated By</th>
-                          <th>Actions</th>
+                          <th data-i18n="id">ID</th>
+                          <th data-i18n="resident">Resident</th>
+                          <th data-i18n="type">Type</th>
+                          <th data-i18n="date">Date</th>
+                          <th data-i18n="status">Status</th>
+                          <th data-i18n="updated_by">Updated By</th>
+                          <th data-i18n="actions">Actions</th>
                         </tr>
                       </thead>
                       <tbody id="admin-others-list"></tbody>
@@ -764,9 +837,18 @@
     <div id="details-modal" class="modal">
       <div class="modal-content">
         <span class="close-modal">&times;</span>
-        <h2 id="modal-title">Details</h2>
+        <h2 id="modal-title" data-i18n="details">Details</h2>
         <div id="modal-body"></div>
         <div id="modal-actions"></div>
+      </div>
+    </div>
+
+    <!-- Media Gallery Modal -->
+    <div id="media-gallery-modal" class="modal">
+      <div class="modal-content" style="max-width: 90%; max-height: 90vh;">
+        <span class="close-modal">&times;</span>
+        <h2 id="gallery-title" data-i18n="media_gallery">Media Gallery</h2>
+        <div id="gallery-body" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; overflow-y: auto; max-height: 80vh;"></div>
       </div>
     </div>
 
